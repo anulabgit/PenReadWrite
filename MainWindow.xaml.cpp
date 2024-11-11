@@ -228,3 +228,20 @@ void winrt::App9::implementation::MainWindow::myClear_Click_1(winrt::Windows::Fo
 {
     MessageBox(NULL, L"hello World\n", L"hi2", NULL);
 }
+void winrt::App9::implementation::MainWindow::Button2_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
+{
+    if (IsChecked2)
+    {
+        IsChecked2 = FALSE;
+        Button2().Label(L"Disable");
+
+        colorPanel().Visibility(Visibility::Collapsed);
+    }
+    else
+    {
+        IsChecked2 = TRUE;
+        Button2().Label(L"Enable");
+
+        colorPanel().Visibility(Visibility::Visible);
+    }
+}
